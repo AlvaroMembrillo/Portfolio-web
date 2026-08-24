@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b5bfd"/>
+      <stop offset="100%" stop-color="#ff6b3d"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <text x="256" y="291" text-anchor="middle"
+        font-family="'Space Grotesk', 'Arial', 'Helvetica Neue', sans-serif"
+        font-weight="700" font-size="230" letter-spacing="-4"
+        fill="#ffffff">AM</text>
+</svg>
