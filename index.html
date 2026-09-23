@@ -23,20 +23,92 @@
       <a href="#top" class="logo">AM<span>.</span></a>
 
       <nav class="nav" id="nav">
-        <a href="#about" class="nav__link">Sobre mí</a>
-        <a href="#experience" class="nav__link">Experiencia</a>
-        <a href="#education" class="nav__link">Formación</a>
-        <a href="#skills" class="nav__link">Habilidades</a>
-        <a href="#projects" class="nav__link">Proyectos</a>
-        <a href="#contact" class="nav__link">Contacto</a>
+        <a href="#about" class="nav__link" data-i18n="nav.about">Sobre mí</a>
+        <a href="#experience" class="nav__link" data-i18n="nav.experience">Experiencia</a>
+        <a href="#education" class="nav__link" data-i18n="nav.education">Formación</a>
+        <a href="#skills" class="nav__link" data-i18n="nav.skills">Habilidades</a>
+        <a href="#projects" class="nav__link" data-i18n="nav.projects">Proyectos</a>
+        <a href="#contact" class="nav__link" data-i18n="nav.contact">Contacto</a>
       </nav>
 
       <div class="header__actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema">
-          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <button class="switch switch--lang" id="langToggle" role="switch" aria-checked="false" aria-label="Cambiar idioma" title="Cambiar idioma" data-i18n-aria-label="header.lang" data-i18n-title="header.lang">
+          <span class="switch__label" aria-hidden="true">ES</span>
+          <span class="switch__label" aria-hidden="true">EN</span>
+          <span class="switch__knob" aria-hidden="true">
+            <span class="flag-card">
+              <svg class="flag flag-es" viewBox="0 0 30 30">
+              <defs>
+                <radialGradient id="flagGlossEs" cx="35%" cy="25%" r="80%"><stop offset="0" stop-color="#fff" stop-opacity=".3"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".15"/></radialGradient>
+                <clipPath id="flagEsShield"><path d="M16 21H44V47A14 14 0 0 1 16 47Z"/></clipPath>
+              </defs>
+              <rect width="30" height="30" fill="#AA151B"/>
+              <rect y="7.5" width="30" height="15" fill="#F1BF00"/>
+              <!-- Coat of arms (drawn at 60x66, scaled into the yellow band) -->
+              <g transform="translate(5.6 8) scale(.19)" stroke-linejoin="round">
+                <!-- Pillars of Hercules with ribbon -->
+                <g fill="#EDEDED" stroke="#8C6F00" stroke-width="1"><rect x="5" y="24" width="6" height="38"/><rect x="49" y="24" width="6" height="38"/></g>
+                <g fill="#C8B100" stroke="#8C6F00" stroke-width="1">
+                  <rect x="3.5" y="20" width="9" height="4" rx="1"/><rect x="3.5" y="62" width="9" height="4" rx="1"/>
+                  <rect x="47.5" y="20" width="9" height="4" rx="1"/><rect x="47.5" y="62" width="9" height="4" rx="1"/>
+                  <path d="M4 20V14.5L6 16.5L8 13L10 16.5L12 14.5V20Z"/><path d="M48 20V14.5L50 16.5L52 13L54 16.5L56 14.5V20Z"/>
+                </g>
+                <path d="M1.5 37.5C6 35 10 44 15 41M45 41C50 44 54 35 58.5 37.5" fill="none" stroke="#AD1519" stroke-width="3.5" stroke-linecap="round"/>
+                <!-- Royal crown -->
+                <path d="M18 16Q18 6 30 6Q42 6 42 16Z" fill="#AD1519"/>
+                <path d="M17 17L15 8L22.5 12L30 5L37.5 12L45 8L43 17M22.5 12V16M37.5 12V16M30 5V16" fill="none" stroke="#C8B100" stroke-width="2"/>
+                <path d="M17 17L15 8L22.5 12L30 5L37.5 12L45 8L43 17" fill="none" stroke="#6E5800" stroke-width=".6"/>
+                <rect x="16" y="15.5" width="28" height="4" rx="1" fill="#C8B100" stroke="#6E5800" stroke-width="1"/>
+                <g fill="#AD1519"><circle cx="23" cy="17.5" r="1.1"/><circle cx="30" cy="17.5" r="1.1"/><circle cx="37" cy="17.5" r="1.1"/></g>
+                <circle cx="30" cy="3.5" r="2" fill="#C8B100" stroke="#8C6F00" stroke-width="1"/>
+                <!-- Shield quarters: Castile, León, Aragon, Navarre, Granada -->
+                <g clip-path="url(#flagEsShield)">
+                  <rect x="16" y="21" width="14" height="14" fill="#AD1519"/>
+                  <g fill="#F1BF00"><rect x="19" y="28" width="8" height="5"/><rect x="19" y="25.5" width="2" height="3"/><rect x="22" y="24" width="2" height="4.5"/><rect x="25" y="25.5" width="2" height="3"/></g>
+                  <rect x="22.3" y="30.5" width="1.4" height="2.5" fill="#005BBF"/>
+                  <rect x="30" y="21" width="14" height="14" fill="#F4F4F4"/>
+                  <path d="M34 33V28Q33.5 24 36.5 24Q39.5 24 39 27L41 25.5L40.5 28.5Q41.5 31.5 39 33Z" fill="#8E2A7F"/>
+                  <rect x="16" y="35" width="14" height="28" fill="#F1BF00"/>
+                  <path d="M18.3 35V63M21.4 35V63M24.6 35V63M27.7 35V63" stroke="#AD1519" stroke-width="1.56"/>
+                  <rect x="30" y="35" width="14" height="28" fill="#AD1519"/>
+                  <path d="M31.5 36.5L42.5 47.5M42.5 36.5L31.5 47.5M37 35.5V48.5M30.5 42H43.5" stroke="#F1BF00" stroke-width="1"/>
+                  <circle cx="37" cy="42" r="1.2" fill="#058E6E"/>
+                  <path d="M22 54Q30 49 38 54V63H22Z" fill="#F4F4F4"/>
+                  <circle cx="30" cy="57.5" r="2.2" fill="#C8102E"/><path d="M30 55.3V53.5" stroke="#058E6E" stroke-width="1"/>
+                </g>
+                <path d="M16 21H44V47A14 14 0 0 1 16 47Z" fill="none" stroke="#8C6F00" stroke-width="1.2"/>
+                <!-- Bourbon-Anjou inescutcheon -->
+                <ellipse cx="30" cy="35" rx="4.5" ry="5.5" fill="#005BBF" stroke="#AD1519" stroke-width="1.5"/>
+                <g fill="#F1BF00"><circle cx="28.5" cy="33.5" r=".9"/><circle cx="31.5" cy="33.5" r=".9"/><circle cx="30" cy="36.8" r=".9"/></g>
+              </g>
+              <rect width="30" height="30" fill="url(#flagGlossEs)"/>
+              <circle cx="15" cy="15" r="14.6" fill="none" stroke="#000" stroke-opacity=".15" stroke-width=".8"/>
+            </svg>
+              <svg class="flag flag-en" viewBox="0 0 30 30">
+              <defs>
+                <clipPath id="flagUkDiag"><path d="M15,15h15v15zv15h-15zh-15v-15zv-15h15z"/></clipPath>
+                <radialGradient id="flagGlossEn" cx="35%" cy="25%" r="80%"><stop offset="0" stop-color="#fff" stop-opacity=".3"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".15"/></radialGradient>
+              </defs>
+              <rect width="30" height="30" fill="#012169"/>
+              <path d="M0,0L30,30M30,0L0,30" stroke="#fff" stroke-width="6"/>
+              <path d="M0,0L30,30M30,0L0,30" clip-path="url(#flagUkDiag)" stroke="#C8102E" stroke-width="4"/>
+              <path d="M15,0v30M0,15h30" stroke="#fff" stroke-width="10"/>
+              <path d="M15,0v30M0,15h30" stroke="#C8102E" stroke-width="6"/>
+              <rect width="30" height="30" fill="url(#flagGlossEn)"/>
+              <circle cx="15" cy="15" r="14.6" fill="none" stroke="#000" stroke-opacity=".15" stroke-width=".8"/>
+            </svg>
+            </span>
+          </span>
         </button>
-        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <button class="switch switch--theme" id="themeToggle" role="switch" aria-checked="false" aria-label="Modo oscuro" title="Modo oscuro" data-i18n-aria-label="header.theme" data-i18n-title="header.theme">
+          <span class="switch__label" aria-hidden="true"><svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span>
+          <span class="switch__label" aria-hidden="true"><svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+          <span class="switch__knob" aria-hidden="true">
+            <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </span>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" data-i18n-aria-label="header.menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -48,20 +120,20 @@
     <!-- HERO -->
     <section class="hero">
       <div class="container hero__inner">
-        <p class="hero__eyebrow reveal">Portfolio profesional</p>
-        <h1 class="hero__title reveal">
+        <p class="hero__eyebrow reveal" data-i18n="hero.eyebrow">Portfolio profesional</p>
+        <h1 class="hero__title reveal" data-i18n="hero.title">
           Hola, soy <span class="highlight">Álvaro Membrillo</span>
         </h1>
         <p class="hero__subtitle reveal">
           Backend Developer · Java &amp; Spring Boot
         </p>
-        <p class="hero__desc reveal">
+        <p class="hero__desc reveal" data-i18n="hero.desc">
           Desarrollador backend especializado en Java y Spring Boot, con experiencia previa
           como desarrollador full stack (Angular + Spring). Actualmente en neocheck, Sevilla.
         </p>
         <div class="hero__cta reveal">
-          <a href="#contact" class="btn btn--primary">Contactar</a>
-          <a href="#" class="btn btn--ghost" download>Descargar CV</a>
+          <a href="#contact" class="btn btn--primary" data-i18n="hero.contact">Contactar</a>
+          <a href="#" class="btn btn--ghost" download data-i18n="hero.cv">Descargar CV</a>
         </div>
         <div class="hero__social reveal">
           <a href="https://www.linkedin.com/in/alvaromembrillo" target="_blank" rel="noopener" aria-label="LinkedIn">
@@ -81,41 +153,41 @@
     <!-- ABOUT -->
     <section id="about" class="section">
       <div class="container">
-        <p class="section__eyebrow reveal">01 — Perfil</p>
-        <h2 class="section__title reveal">Sobre mí</h2>
+        <p class="section__eyebrow reveal" data-i18n="about.eyebrow">01 — Perfil</p>
+        <h2 class="section__title reveal" data-i18n="about.title">Sobre mí</h2>
         <div class="about__grid">
           <div class="about__text reveal">
-            <p>
+            <p data-i18n="about.p1">
               Desarrollador fullstack especializado en Java y Spring Boot.
               Empecé mi carrera en Getronics (Sevilla) como Junior Developer, y pasé a Full Stack
               Developer trabajando con Angular y Spring durante casi 3 años. Desde septiembre de
               2025 formo parte de neocheck como desarrollador de aplicaciones.
             </p>
-            <p>
+            <p data-i18n="about.p2">
               Formado en Ingeniería Informática (UCAM) y en Desarrollo de Aplicaciones Web (IES Alixar),
               combino esa base con experiencia práctica en bases de datos Oracle y control de versiones con Git/GitHub.
             </p>
             <div class="about__facts">
               <div class="fact">
                 <span class="fact__num">3+</span>
-                <span class="fact__label">Años de experiencia</span>
+                <span class="fact__label" data-i18n="about.fact.years">Años de experiencia</span>
               </div>
               <div class="fact">
                 <span class="fact__num">2</span>
-                <span class="fact__label">Empresas</span>
+                <span class="fact__label" data-i18n="about.fact.companies">Empresas</span>
               </div>
               <div class="fact">
                 <span class="fact__num">1</span>
-                <span class="fact__label">Certificación</span>
+                <span class="fact__label" data-i18n="about.fact.cert">Certificación</span>
               </div>
             </div>
           </div>
           <div class="about__card reveal">
             <div class="avatar" aria-hidden="true">AM</div>
             <ul class="about__list">
-              <li><strong>Ubicación:</strong> Gines, Andalucía, España</li>
-              <li><strong>Rol actual:</strong> Desarrollador de aplicaciones en neocheck</li>
-              <li><strong>Idiomas:</strong> Español (nativo), Inglés (conversacional)</li>
+              <li data-i18n="about.location"><strong>Ubicación:</strong> Gines, Andalucía, España</li>
+              <li data-i18n="about.role"><strong>Rol actual:</strong> Desarrollador de aplicaciones en neocheck</li>
+              <li data-i18n="about.languages"><strong>Idiomas:</strong> Español (nativo), Inglés (conversacional)</li>
               <li><strong>Email:</strong> alvaro.membrillo@gmail.com</li>
             </ul>
           </div>
@@ -126,17 +198,17 @@
     <!-- EXPERIENCE -->
     <section id="experience" class="section section--alt">
       <div class="container">
-        <p class="section__eyebrow reveal">02 — Trayectoria</p>
-        <h2 class="section__title reveal">Experiencia profesional</h2>
+        <p class="section__eyebrow reveal" data-i18n="exp.eyebrow">02 — Trayectoria</p>
+        <h2 class="section__title reveal" data-i18n="exp.title">Experiencia profesional</h2>
 
         <div class="timeline">
           <div class="timeline__item reveal">
             <div class="timeline__dot"></div>
             <div class="timeline__content">
-              <span class="timeline__date">Septiembre 2025 — Actualidad</span>
-              <h3>Desarrollador de aplicaciones · <span class="timeline__company">Neocheck</span></h3>
-              <p class="timeline__location">Sevilla, Andalucía, España</p>
-              <p>[Añade aquí tus responsabilidades y logros principales en este puesto.]</p>
+              <span class="timeline__date" data-i18n="exp1.date">Septiembre 2025 — Actualidad</span>
+              <h3 data-i18n="exp1.title">Desarrollador de aplicaciones · <span class="timeline__company">Neocheck</span></h3>
+              <p class="timeline__location" data-i18n="exp1.location">Sevilla, Andalucía, España</p>
+              <p data-i18n="exp1.desc">[Añade aquí tus responsabilidades y logros principales en este puesto.]</p>
               <ul class="timeline__tags">
                 <li>Java</li><li>Spring Boot</li><li>Oracle Database</li>
               </ul>
@@ -146,10 +218,10 @@
           <div class="timeline__item reveal">
             <div class="timeline__dot"></div>
             <div class="timeline__content">
-              <span class="timeline__date">Enero 2023 — Septiembre 2025 · 2 años 9 meses</span>
+              <span class="timeline__date" data-i18n="exp2.date">Enero 2023 — Septiembre 2025 · 2 años 9 meses</span>
               <h3>Full Stack Developer - Angular - Spring · <span class="timeline__company">Getronics</span></h3>
-              <p class="timeline__location">Sevilla</p>
-              <p>[Añade aquí el contexto, responsabilidades y aportaciones clave en este puesto.]</p>
+              <p class="timeline__location" data-i18n="exp.seville">Sevilla</p>
+              <p data-i18n="exp2.desc">[Añade aquí el contexto, responsabilidades y aportaciones clave en este puesto.]</p>
               <ul class="timeline__tags">
                 <li>Angular</li><li>Spring</li><li>Java</li>
               </ul>
@@ -159,10 +231,10 @@
           <div class="timeline__item reveal">
             <div class="timeline__dot"></div>
             <div class="timeline__content">
-              <span class="timeline__date">Enero 2023 — Febrero 2023 · 2 meses</span>
+              <span class="timeline__date" data-i18n="exp3.date">Enero 2023 — Febrero 2023 · 2 meses</span>
               <h3>Junior Developer · <span class="timeline__company">Getronics</span></h3>
-              <p class="timeline__location">Sevilla</p>
-              <p>[Añade aquí una breve descripción de tus primeras tareas en este puesto.]</p>
+              <p class="timeline__location" data-i18n="exp.seville">Sevilla</p>
+              <p data-i18n="exp3.desc">[Añade aquí una breve descripción de tus primeras tareas en este puesto.]</p>
               <ul class="timeline__tags">
                 <li>Java</li><li>Angular</li>
               </ul>
@@ -175,28 +247,28 @@
     <!-- EDUCATION -->
     <section id="education" class="section">
       <div class="container">
-        <p class="section__eyebrow reveal">03 — Formación</p>
-        <h2 class="section__title reveal">Educación y certificaciones</h2>
+        <p class="section__eyebrow reveal" data-i18n="edu.eyebrow">03 — Formación</p>
+        <h2 class="section__title reveal" data-i18n="edu.title">Educación y certificaciones</h2>
 
         <div class="edu-grid">
           <div class="edu-card reveal">
-            <span class="edu-card__date">Desde septiembre de 2024</span>
-            <h3>Ingeniería Informática</h3>
-            <p class="edu-card__org">UCAM — Universidad Católica San Antonio de Murcia</p>
+            <span class="edu-card__date" data-i18n="edu1.date">Desde septiembre de 2024</span>
+            <h3 data-i18n="edu1.title">Ingeniería Informática</h3>
+            <p class="edu-card__org" data-i18n="edu1.org">UCAM — Universidad Católica San Antonio de Murcia</p>
           </div>
           <div class="edu-card reveal">
-            <span class="edu-card__date">2018 — Febrero 2022</span>
-            <h3>Grado Superior en Desarrollo de Aplicaciones Web</h3>
+            <span class="edu-card__date" data-i18n="edu2.date">2018 — Febrero 2022</span>
+            <h3 data-i18n="edu2.title">Grado Superior en Desarrollo de Aplicaciones Web</h3>
             <p class="edu-card__org">IES Alixar</p>
           </div>
           <div class="edu-card reveal">
             <span class="edu-card__date">2014 — 2018</span>
-            <h3>ESO y Bachillerato (ciencias)</h3>
+            <h3 data-i18n="edu3.title">ESO y Bachillerato (ciencias)</h3>
             <p class="edu-card__org">Colegio San José SSCC Sevilla</p>
           </div>
           <div class="edu-card reveal">
-            <span class="edu-card__date">Certificación</span>
-            <h3>Curso de SQL desde cero</h3>
+            <span class="edu-card__date" data-i18n="edu4.date">Certificación</span>
+            <h3 data-i18n="edu4.title">Curso de SQL desde cero</h3>
             <p class="edu-card__org">OpenWebinars</p>
           </div>
         </div>
@@ -206,8 +278,8 @@
     <!-- SKILLS -->
     <section id="skills" class="section section--alt">
       <div class="container">
-        <p class="section__eyebrow reveal">04 — Habilidades</p>
-        <h2 class="section__title reveal">Skills &amp; tecnologías</h2>
+        <p class="section__eyebrow reveal" data-i18n="skills.eyebrow">04 — Habilidades</p>
+        <h2 class="section__title reveal" data-i18n="skills.title">Skills &amp; tecnologías</h2>
 
         <div class="skills-grid">
           <div class="skill-cat reveal">
@@ -225,7 +297,7 @@
             </div>
           </div>
           <div class="skill-cat reveal">
-            <h3>Herramientas</h3>
+            <h3 data-i18n="skills.tools">Herramientas</h3>
             <div class="tag-cloud">
               <span class="tag">Git</span><span class="tag">GitHub</span>
             </div>
@@ -233,8 +305,8 @@
           <div class="skill-cat reveal">
             <h3>Soft skills</h3>
             <div class="tag-cloud">
-              <span class="tag">Trabajo en equipo</span><span class="tag">Comunicación</span>
-              <span class="tag">Gestión de proyectos</span>
+              <span class="tag" data-i18n="skills.teamwork">Trabajo en equipo</span><span class="tag" data-i18n="skills.communication">Comunicación</span>
+              <span class="tag" data-i18n="skills.pm">Gestión de proyectos</span>
             </div>
           </div>
         </div>
@@ -244,45 +316,45 @@
     <!-- PROJECTS -->
     <section id="projects" class="section">
       <div class="container">
-        <p class="section__eyebrow reveal">05 — Proyectos</p>
-        <h2 class="section__title reveal">Proyectos destacados</h2>
+        <p class="section__eyebrow reveal" data-i18n="projects.eyebrow">05 — Proyectos</p>
+        <h2 class="section__title reveal" data-i18n="projects.title">Proyectos destacados</h2>
 
-        <h3>En proceso... próximamente habrá novedades</h3>
+        <h3 data-i18n="projects.wip">En proceso... próximamente habrá novedades</h3>
 
         <div class="projects-grid" style="display: none;">
           <article class="project-card reveal">
             <div class="project-card__img" aria-hidden="true"></div>
             <div class="project-card__body">
-              <h3>[Nombre del proyecto]</h3>
-              <p>[Breve descripción del proyecto: qué problema resuelve y qué hiciste tú.]</p>
+              <h3 data-i18n="project.name">[Nombre del proyecto]</h3>
+              <p data-i18n="project.desc">[Breve descripción del proyecto: qué problema resuelve y qué hiciste tú.]</p>
               <ul class="timeline__tags">
                 <li>[Stack]</li><li>[Stack]</li>
               </ul>
-              <a href="#" class="project-card__link">Ver proyecto →</a>
+              <a href="#" class="project-card__link" data-i18n="project.link">Ver proyecto →</a>
             </div>
           </article>
 
           <article class="project-card reveal">
             <div class="project-card__img" aria-hidden="true"></div>
             <div class="project-card__body">
-              <h3>[Nombre del proyecto]</h3>
-              <p>[Breve descripción del proyecto: qué problema resuelve y qué hiciste tú.]</p>
+              <h3 data-i18n="project.name">[Nombre del proyecto]</h3>
+              <p data-i18n="project.desc">[Breve descripción del proyecto: qué problema resuelve y qué hiciste tú.]</p>
               <ul class="timeline__tags">
                 <li>[Stack]</li><li>[Stack]</li>
               </ul>
-              <a href="#" class="project-card__link">Ver proyecto →</a>
+              <a href="#" class="project-card__link" data-i18n="project.link">Ver proyecto →</a>
             </div>
           </article>
 
           <article class="project-card reveal">
             <div class="project-card__img" aria-hidden="true"></div>
             <div class="project-card__body">
-              <h3>[Nombre del proyecto]</h3>
-              <p>[Breve descripción del proyecto: qué problema resuelve y qué hiciste tú.]</p>
+              <h3 data-i18n="project.name">[Nombre del proyecto]</h3>
+              <p data-i18n="project.desc">[Breve descripción del proyecto: qué problema resuelve y qué hiciste tú.]</p>
               <ul class="timeline__tags">
                 <li>[Stack]</li><li>[Stack]</li>
               </ul>
-              <a href="#" class="project-card__link">Ver proyecto →</a>
+              <a href="#" class="project-card__link" data-i18n="project.link">Ver proyecto →</a>
             </div>
           </article>
         </div>
@@ -292,9 +364,9 @@
     <!-- CONTACT -->
     <section id="contact" class="section section--alt">
       <div class="container contact__inner">
-        <p class="section__eyebrow reveal">06 — Contacto</p>
-        <h2 class="section__title reveal">Hablemos</h2>
-        <p class="contact__desc reveal">
+        <p class="section__eyebrow reveal" data-i18n="contact.eyebrow">06 — Contacto</p>
+        <h2 class="section__title reveal" data-i18n="contact.title">Hablemos</h2>
+        <p class="contact__desc reveal" data-i18n="contact.desc">
           ¿Tienes un proyecto backend con Java/Spring Boot o buscas un desarrollador full stack?
           Escríbeme, estaré encantado de hablar.
         </p>
@@ -310,8 +382,8 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <span>© <span id="year"></span> Álvaro Membrillo. Todos los derechos reservados.</span>
-      <a href="#top" class="footer__top">Volver arriba ↑</a>
+      <span>© <span id="year"></span> <span data-i18n="footer.rights">Álvaro Membrillo. Todos los derechos reservados.</span></span>
+      <a href="#top" class="footer__top" data-i18n="footer.top">Volver arriba ↑</a>
     </div>
   </footer>
 

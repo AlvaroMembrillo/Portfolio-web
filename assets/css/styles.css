@@ -104,19 +104,62 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing:
 
 .header__actions { display: flex; align-items: center; gap: 0.75rem; }
 
-.theme-toggle {
-  width: 38px; height: 38px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  border: 1px solid var(--border);
-  color: var(--text);
+/* Header switches (language + theme) */
+.switch {
+  position: relative; width: 64px; height: 34px; border-radius: 999px;
+  display: flex; align-items: center; justify-content: space-between; padding: 0 10px;
+  border: 1px solid var(--border); background: var(--surface); color: var(--text-muted);
+  transition: border-color 0.2s ease, background 0.3s ease;
 }
-.theme-toggle .icon { width: 18px; height: 18px; }
-.theme-toggle .icon-moon { display: none; }
-:root[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
-:root[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+.switch:hover { border-color: var(--text-muted); }
+.switch:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.switch__label { display: flex; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em; }
+.switch__label .icon { width: 13px; height: 13px; }
+.switch__knob {
+  position: absolute; top: 3px; left: 3px; width: 26px; height: 26px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg); color: var(--accent);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+.switches-ready .switch__knob { transition: transform 0.4s cubic-bezier(0.34, 1.4, 0.64, 1), background 0.3s ease; }
+.switch:active .switch__knob { width: 30px; }
+
+/* Theme switch: knob on the right in dark mode */
+.switch--theme .switch__knob .icon { width: 15px; height: 15px; }
+.switch--theme .switch__knob .icon-moon { display: none; }
+:root[data-theme="dark"] .switch--theme .switch__knob { transform: translateX(30px); }
+:root[data-theme="dark"] .switch--theme .switch__knob .icon-sun { display: none; }
+:root[data-theme="dark"] .switch--theme .switch__knob .icon-moon { display: block; }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .theme-toggle .icon-sun { display: none; }
-  :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: block; }
+  :root:not([data-theme="light"]) .switch--theme .switch__knob { transform: translateX(30px); }
+  :root:not([data-theme="light"]) .switch--theme .switch__knob .icon-sun { display: none; }
+  :root:not([data-theme="light"]) .switch--theme .switch__knob .icon-moon { display: block; }
+}
+
+/* Language switch: knob is the flag, slides right and flips for English */
+.switch--lang .switch__knob { background: none; perspective: 200px; }
+:root[lang="en"] .switch--lang .switch__knob { transform: translateX(30px); }
+.flag-card {
+  position: relative; width: 100%; height: 100%;
+  transform-style: preserve-3d;
+}
+.switches-ready .flag-card { transition: transform 0.6s cubic-bezier(0.34, 1.4, 0.64, 1); }
+:root[lang="en"] .flag-card { transform: rotateY(180deg); }
+.flag {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  border-radius: 50%; backface-visibility: hidden;
+}
+.flag-en { transform: rotateY(180deg); }
+
+/* Text swap on language change (filter, so it doesn't clash with .reveal's opacity) */
+.lang-out [data-i18n] { animation: langOut 0.18s ease forwards; }
+.lang-in [data-i18n] { animation: langIn 0.3s ease; }
+@keyframes langOut { to { filter: opacity(0) blur(3px); } }
+@keyframes langIn { from { filter: opacity(0) blur(3px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .switches-ready .switch__knob, .switches-ready .flag-card { transition: none; }
+  .lang-out [data-i18n], .lang-in [data-i18n] { animation: none; }
 }
 
 .nav-toggle {
