@@ -48,7 +48,6 @@
       'hero.title': 'Hi, I\'m <span class="highlight">Álvaro Membrillo</span>',
       'hero.desc': 'Backend developer specialized in Java and Spring Boot, with previous experience as a full stack developer (Angular + Spring). Currently at neocheck, Seville.',
       'hero.contact': 'Get in touch',
-      'hero.cv': 'Download CV',
       'about.eyebrow': '01 — Profile',
       'about.title': 'About me',
       'about.p1': 'Fullstack developer specialized in Java and Spring Boot. I started my career at Getronics (Seville) as a Junior Developer, and moved on to Full Stack Developer working with Angular and Spring for almost 3 years. Since September 2025 I have been part of neocheck as an application developer.',
